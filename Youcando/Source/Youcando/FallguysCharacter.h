@@ -4,25 +4,50 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "InputActionValue.h"
 #include "FallguysCharacter.generated.h"
 
+
 class UInputMappingContext;
+class UInputAction;
+class USpringArmComponent;
+class UCameraComponent;
+
 
 UCLASS()
 class YOUCANDO_API AFallguysCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
+	
+	
 public:
 	// Sets default values for this character's properties
+
+
 	AFallguysCharacter();
+	virtual void Jump() override;
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 	
-	UPROPERTY(EditAnywhere,BlueprintReadOnly, category = Input)
+	UPROPERTY(EditAnywhere,BlueprintReadOnly, Category = Input)
 	UInputMappingContext* ControllMappingContext;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
+	UInputAction* MoveAction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
+	UInputAction* LookAction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
+	UInputAction* JumpAction;
+
+
+	void Move(const FInputActionValue& Value);
+	void Look(const FInputActionValue& Value);
+
 
 public:	
 	// Called every frame
@@ -31,6 +56,8 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	USpringArmComponent* SpringArm;
+	UCameraComponent* Camera;
 
 private:
 
