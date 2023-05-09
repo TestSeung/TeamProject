@@ -26,7 +26,6 @@ public:
 
 
 	AFallguysCharacter();
-	virtual void Jump() override;
 
 protected:
 	// Called when the game starts or when spawned
@@ -44,6 +43,11 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
 	UInputAction* JumpAction;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Camera)
+	USpringArmComponent* SpringArm;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Camera)
+	UCameraComponent* Camera;
 
 	void Move(const FInputActionValue& Value);
 	void Look(const FInputActionValue& Value);
@@ -55,9 +59,6 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
-	USpringArmComponent* SpringArm;
-	UCameraComponent* Camera;
 
 private:
 
