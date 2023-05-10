@@ -5,7 +5,6 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "InputActionValue.h"
-#include "Components/StaticmeshComponent.h"
 #include "FallguysCharacter.generated.h"
 
 
@@ -13,7 +12,7 @@ class UInputMappingContext;
 class UInputAction;
 class USpringArmComponent;
 class UCameraComponent;
-class UBoxComponent;
+
 
 
 UCLASS()
@@ -21,8 +20,6 @@ class YOUCANDO_API AFallguysCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
-	
-	
 public:
 	// Sets default values for this character's properties
 
@@ -33,8 +30,7 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Components)
-	UBoxComponent* Box;
+
 
 	UPROPERTY(EditAnywhere,BlueprintReadOnly, Category = Input)
 	UInputMappingContext* ControllMappingContext;

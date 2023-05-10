@@ -33,4 +33,8 @@ public:
 
 	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category = "Components")
 	UStaticMeshComponent* Cylinder;
+	//hit event
+	UFUNCTION()
+	void PlayerTouch(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+};
 };

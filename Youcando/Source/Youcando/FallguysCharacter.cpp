@@ -18,10 +18,7 @@ AFallguysCharacter::AFallguysCharacter()
 {
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
-	GetCapsuleComponent()->InitCapsuleSize(42.0f, 42.0f);
-
-
+	
 
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationYaw = false;
