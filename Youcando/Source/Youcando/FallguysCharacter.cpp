@@ -21,6 +21,8 @@ AFallguysCharacter::AFallguysCharacter()
 
 	GetCapsuleComponent()->InitCapsuleSize(42.0f, 42.0f);
 
+
+
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationYaw = false;
 	bUseControllerRotationRoll = false;
